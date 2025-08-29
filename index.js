@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get("/",(req, res)=>{
+  res.status(200).send("BFHL API is running. Use POST /bfhl to send data.");
+});
+
 app.post("/bfhl", (req, res) => {
   try {
     const { data } = req.body;
